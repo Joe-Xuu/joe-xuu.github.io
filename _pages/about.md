@@ -10,4 +10,5 @@ redirect_from:
 about me
 ------
 I'm a thrid year undergraduate student from [Keio University](https://www.keio.ac.jp/ja), faculty of environment and information studies.
-My research interest includes database, AI and hardware acceleration.
+
+My research interest includes database, AI and game engineering.
