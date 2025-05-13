@@ -22,7 +22,7 @@ repository               : "Joe-Xuu/joe-xuu.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile-pic.png"
   name             : "Joe"
   pronouns         : # example: "she/her"  
   bio              : "Struggling with SILO now"
