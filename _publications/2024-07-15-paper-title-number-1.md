@@ -1,5 +1,5 @@
 ---
-title: "Flash fiction <Tommy>"
+title: "Flash Fiction - Tommy"
 collection: publications
 category: manuscripts
 permalink: /publication/2024-paper-title-number-1
