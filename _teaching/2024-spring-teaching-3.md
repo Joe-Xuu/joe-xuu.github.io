@@ -8,4 +8,4 @@ date: 2024, Sping
 location: "Fujisawa, Kanagawa, Japan"
 ---
 
-SA for sfc record club
+Chapter 8 of OSTEP -- MLFQ
