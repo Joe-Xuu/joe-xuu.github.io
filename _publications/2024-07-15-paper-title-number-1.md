@@ -4,7 +4,7 @@ collection: publications
 category: manuscripts
 permalink: /publication/2024-paper-title-number-1
 excerpt: 'A published flash fiction by sfc indie press https://sfcindiepress.com/works/anthology-spring-2024'
-date: 2024
+date: 2024-07-15
 venue: 'Keio SFC Creative Writing Anology Spring 2024'
 slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
 paperurl: 'http://academicpages.github.io/files/paper1.pdf'
