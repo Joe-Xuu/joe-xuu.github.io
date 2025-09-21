@@ -13,7 +13,7 @@ Games
 ======
 * Pong 2.0
   * Developed by Python
-![Pong2.0-1|50](/images/pong1.png)
+<img src="/images/pong1.png" width=100px>
 
 ![Pong2.0-2|50](/images/pong2.png)
 * Paper Scissor Stone Online
