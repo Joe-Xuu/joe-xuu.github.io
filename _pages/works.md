@@ -13,8 +13,9 @@ Games
 ======
 * Pong 2.0
   * Developed by Python
-![Pong2.0-1](/images/pong1.png "Pong")
-![Pong2.0-2](/images/pong2.png "Pong")
+![Pong2.0-1](/images/pong1.png=600x600 "Pong")
+
+![Pong2.0-2](/images/pong2.png=600x600 "Pong")
 * Paper Scissor Stone Online
   * Developed by Python, Multi-player Supported
   * Click to see the source code [Source code of PSS online](https://github.com/Joe-Xuu/ScriptLanguageProgrammingFinal "check it out")
