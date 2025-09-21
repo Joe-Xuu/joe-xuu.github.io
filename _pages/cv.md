@@ -72,7 +72,7 @@ Proficiency and Achievement
 * TOEFL iBT 102/120
 * JASSO Scholarship Recipient, 2023
 * Yamaoka Kenichi Memorial Scholarship Recipient, 2023~2025
-* Valedictorian for JCL Language School, 2022.3
+* Valedictorian for JCL Language School, 2023.3
 * Main developer of mobile game “Vampire　Survivor　Knockoff”　
   * (https://play.unity.com/ja/games/9224376a-dd9c-48e6-9352-1c5a622a8e6a/vampire-survivor-knockoff)
 * Director & Producer of experimental film "Apotheosis"
