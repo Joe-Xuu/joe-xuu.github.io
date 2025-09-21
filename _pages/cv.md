@@ -12,7 +12,7 @@ redirect_from:
 Education
 ======
 * Bachelor
-  * Japan, Keio University, April 2023 ~　May 2027 (expected)
+  * Japan, Keio University, April 2023 ~ May 2027 (expected)
   * Cumulative GPA: 3.67/4
 
 * Language School
