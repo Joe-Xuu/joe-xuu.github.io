@@ -9,71 +9,40 @@ redirect_from:
 
 {% include base_path %}
 
-Education
+Games
 ======
-* Bachelor
-  * Japan, Keio University, April 2023 ~ May 2027 (expected)
-  * Cumulative GPA: 3.67/4
+* Pong 2.0
+  * Developed by Python
+* Paper Scissor Stone Online
+  * Developed by Python, Multi-player Supported
+  * Click to see the source code [Source code of PSS online](https://github.com/Joe-Xuu/ScriptLanguageProgrammingFinal "check it out")
+* Vampire Survivor Knockoff
+  * Developed by Unity®
+  * Click to play on Unity.play (Touch-screen Only) [Vampire Survivor Knockoff](https://play.unity.com/ja/games/9224376a-dd9c-48e6-9352-1c5a622a8e6a/vampire-survivor-knockoff "click to play")
+* Castlevaniamania (WIP)
+  * Developed by Unity®
 
-* Language School
-  * Japan, JCL Foreign Language School, April 2022 ~ May 2023
+Films
+======
+* Experimental Film "APOTHEOSIS"
+  * Directed and Produced by Kouzen Jo
+  * Year: 2025, Genre: Analog Horror
+  * Watch on Youtube [APOTHEOSIS](https://youtu.be/Ar7Lp2a3Fy8 "Click to watch")
 
-* High School  
-  * China, Xi’An Tieyi High School, September 2018 ~ July 2021
-  * Cumulative GPA: 88.1/100
+Audio Books
+======
+* Audio Book "The Eater (Pentalogy)"
+  * Writed and Produced by Kouzen Jo
+  * Year 2024, Genre: Science Fiction, Space Horror
+  * Watch on Youtube [The Eater Pentalogy](https://www.youtube.com/watch?v=YXyaFd1sI0Q "Click to watch")
 
-Work experience
+Fictions
 ======
-* Fall 2025: IT consultant
-  * SAP Japan
+* Flash Fiction - Tommy
+  * Included in Keio SFC Creative Writing Anology Spring 2024, 2024
+  * A published flash fiction by sfc indie press [SFC indie press](https://sfcindiepress.com/works/anthology-spring-2024 "check it out")
+* Flash Fiction - The Magic Mirror
+  * Included in Keio SFC Creative Writing Anology Spring 2024, 2024
+  * A published flash fiction by sfc indie press [SFC indie press](https://sfcindiepress.com/works/anthology-spring-2024 "check it out")
 
-* Fall 2024: Student Assistant
-  * Keio University
-  * Supervisor: Professor David Hoenigman
 
-* Spring 2024: Student Assistant
-  * Keio University
-  * Supervisor: Professor David Hoenigman
-  
-Skills
-======
-* Programming Skills:
-  * Python
-  * C#,　C,　C++,　CUDA-C
-  * Assembly　Language
-  * SPSS,　R
-  * UE,　Unity　Engine
-* Mainstream　DAWs　
-* Multi-media　Processing
-* Database Related Expertise
-
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Proficiency and Achievement
-======
-* JLPT N1 160/180
-* EJU Japanese Test 366/369
-* TOEFL iBT 102/120
-* JASSO Scholarship Recipient, 2023
-* Yamaoka Kenichi Memorial Scholarship Recipient, 2023~2025
-* Valedictorian for JCL Language School, 2023.3
-* Main developer of mobile game “Vampire　Survivor　Knockoff”　
-  * (https://play.unity.com/ja/games/9224376a-dd9c-48e6-9352-1c5a622a8e6a/vampire-survivor-knockoff)
-* Director & Producer of experimental film "Apotheosis"
-* Writer & Producer of audio book "The Eater"
