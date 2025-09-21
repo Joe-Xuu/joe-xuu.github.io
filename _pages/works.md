@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Works"https://github.com/Joe-Xuu/joe-xuu.github.io/blob/master/_pages/works.md
+title: "Works"
 permalink: /works/
 author_profile: true
 redirect_from:
