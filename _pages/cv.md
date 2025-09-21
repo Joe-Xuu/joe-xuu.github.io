@@ -11,35 +11,39 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+*  Bachelor
+  * Japan,　Keio　University,　April　2023　~　May　2027　(expected)
+  * Cumulative　GPA:　3.67　/　4
+
+* Language School
+  * Japan, JCL　Foreign　Language　School,　April　2022　~　May　2023
+* High School
+  
+  * China, Xi’An　Tieyi　High　School,　September　2018　~　July　2021
+  * Cumulative　GPA:　88.1　/　100
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* Fall 2025: IT consultant
+  * SAP Japan
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* Fall 2024: Student Assistant
+  * Keio University
+  * Supervisor: Professor David Hoenigman
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* Spring 2024: Student Assistant
+  * Keio University
+  * Supervisor: Professor David Hoenigman
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Python
+* C#,　C,　C++,　CUDA-C
+* Assembly　Language
+* SPSS,　R
+* UE,　Unity　Engine
+* Mainstream　DAWs　
+* Multi-media　Processing
 
 Publications
 ======
@@ -59,6 +63,15 @@ Teaching
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Service and leadership
+Proficiency and Achievement
 ======
-* Currently signed in to 43 different slack teams
+* JLPT　N1　160　/　180
+* EJU　Japanese　Test　366　/　369
+* TOEFL　iBT　102　/　120
+* JASSO　Scholarship　Recipient,　2023
+* Yamaoka　Kenichi　Memorial　Scholarship　Recipient,　2023　~2025
+* Valedictorian　for　JCL　Language　School,　2022.3
+* Main　developer　of　mobile　game　“Vampire　Survivor　Knockoff”　
+* (https://play.unity.com/ja/games/9224376a-dd9c-48e6-9352-1c5a622a8e6a/vampire-survivor-knockoff)
+* Director　&　Producer　of　experimental　film　"Apotheosis"
+* Writer　&　Producer　of　audio　book　"The　Eater"
