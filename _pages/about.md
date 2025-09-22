@@ -9,10 +9,10 @@ redirect_from:
 
 about me
 ------
-I'm a thrid year undergraduate student from [Keio University](https://www.keio.ac.jp/ja), faculty of environment and information studies.
+I'm a thrid year undergraduate student from [Keio University](https://www.keio.ac.jp/ja), faculty of environment and information studies, also a member of [Data Platform Laboratory.](https://www.jasso.go.jp/ryugaku/scholarship_j/shoreihi/index.html)
 
 My research interest includes [database](https://www.jasso.go.jp/ryugaku/scholarship_j/shoreihi/index.html), ERP programming, AI and game engineering.
 
-I'm also a film director, writer, and a band member. Check out these cool stuffs I've made in [Works](/works/)!
+I'm also a film director, a writer, a composer, and a band member. You can check out these cool stuffs I've made in [Works](/works/)!
 
-Check [cv](/cv/) for more detailed information about me!
+Take a look of my [CV](/cv/) for more detailed information.
