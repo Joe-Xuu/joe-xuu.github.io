@@ -25,7 +25,7 @@ Education
 Work experience
 ======
 * Fall 2025: IT consultant
-  * [SAP Japan](https://www.sap.com/japan/index.html)
+  * [SAP Japan](https://www.sap.com/japan/about/company.html)
 
 * Fall 2024: Student Assistant
   * [Keio University](https://www.keio.ac.jp/ja)
