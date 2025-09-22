@@ -13,4 +13,4 @@ I'm a thrid year undergraduate student from [Keio University](https://www.keio.a
 
 My research interest includes database, AI and game engineering.
 
-I'm also a film director, writer, and a band member. Check out these cool stuffs I've made in [Works](/_pages/works.md)!
+I'm also a film director, writer, and a band member. Check out these cool stuffs I've made in [Works](/works)!
