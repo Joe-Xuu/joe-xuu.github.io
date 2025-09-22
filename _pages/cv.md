@@ -42,7 +42,8 @@ Skills
   * C#, C, C++, CUDA-C
   * Assembly Language
   * SPSS, R
-  * UE, Unity　Engine
+  * UE, Unity Engine
+  * HTML etc.
 * Mainstream DAWs　
 * Multi-media Processing
 * Database Related Expertise
