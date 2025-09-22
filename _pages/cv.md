@@ -12,39 +12,39 @@ redirect_from:
 Education
 ======
 * Bachelor
-  * Japan, Keio University, April 2023 ~ May 2027 (expected)
+  * Japan, [Keio University](https://www.keio.ac.jp/ja), April 2023 ~ May 2027 (expected)
   * Cumulative GPA: 3.67/4
 
 * Language School
-  * Japan, JCL Foreign Language School, April 2022 ~ May 2023
+  * Japan, [JCL Foreign Language School](https://www.jclcram.com/ja), April 2022 ~ May 2023
 
 * High School  
-  * China, Xi’An Tieyi High School, September 2018 ~ July 2021
+  * China, [Xi’An Tieyi High School](https://www.linkedin.com/school/tieyi/), September 2018 ~ July 2021
   * Cumulative GPA: 88.1/100
 
 Work experience
 ======
 * Fall 2025: IT consultant
-  * SAP Japan
+  * [SAP Japan](https://www.sap.com/japan/index.html)
 
 * Fall 2024: Student Assistant
-  * Keio University
+  * [Keio University](https://www.keio.ac.jp/ja)
   * Supervisor: Professor David Hoenigman
 
 * Spring 2024: Student Assistant
-  * Keio University
+  * [Keio University](https://www.keio.ac.jp/ja)
   * Supervisor: Professor David Hoenigman
   
 Skills
 ======
 * Programming Skills:
   * Python
-  * C#,　C,　C++,　CUDA-C
-  * Assembly　Language
-  * SPSS,　R
-  * UE,　Unity　Engine
-* Mainstream　DAWs　
-* Multi-media　Processing
+  * C#, C, C++, CUDA-C
+  * Assembly Language
+  * SPSS, R
+  * UE, Unity　Engine
+* Mainstream DAWs　
+* Multi-media Processing
 * Database Related Expertise
 
 Publications
@@ -70,10 +70,20 @@ Proficiency and Achievement
 * JLPT N1 160/180
 * EJU Japanese Test 366/369
 * TOEFL iBT 102/120
-* JASSO Scholarship Recipient, 2023
+* [JASSO Scholarship](https://www.jasso.go.jp/ryugaku/scholarship_j/shoreihi/index.html) Recipient, 2023
 * Yamaoka Kenichi Memorial Scholarship Recipient, 2023~2025
-* Valedictorian for JCL Language School, 2023.3
+* Valedictorian for [JCL Foreign Language School](https://www.jclcram.com/ja), 2023.3
 * Main developer of mobile game “Vampire　Survivor　Knockoff”　
-  * (https://play.unity.com/ja/games/9224376a-dd9c-48e6-9352-1c5a622a8e6a/vampire-survivor-knockoff)
+  * Click to play on Unity.play (Touch-screen Only) [Vampire Survivor Knockoff](https://play.unity.com/ja/games/9224376a-dd9c-48e6-9352-1c5a622a8e6a/vampire-survivor-knockoff "click to play")
+
+<img src="/images/vam1.png" width=500px>
+
 * Director & Producer of experimental film "Apotheosis"
+  * Watch on Youtube [APOTHEOSIS](https://youtu.be/Ar7Lp2a3Fy8 "Click to watch")
+
+<img src="/images/apo1.png" width=500px>
+
 * Writer & Producer of audio book "The Eater"
+  * Watch on Youtube [The Eater Pentalogy](https://www.youtube.com/watch?v=YXyaFd1sI0Q "Click to watch")
+
+<img src="/images/eater1.png" width=500px>
