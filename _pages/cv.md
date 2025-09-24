@@ -69,7 +69,7 @@ Teaching
 Proficiency and Achievement
 ======
 * JLPT N1 160/180
-* EJU Japanese Test 366/369
+* [EJU](https://www.jasso.go.jp/ryugaku/eju/about/data/result/__icsFiles/afieldfile/2024/06/03/outline_of_results_j_2022-1.pdf) Japanese Test 366/369
 * TOEFL iBT 102/120
 * [JASSO Scholarship](https://www.jasso.go.jp/ryugaku/scholarship_j/shoreihi/index.html) Recipient, 2023
 * Yamaoka Kenichi Memorial Scholarship Recipient, 2023~2025
