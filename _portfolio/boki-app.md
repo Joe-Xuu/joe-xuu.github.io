@@ -1,6 +1,6 @@
 ---
 title: "日商簿記3級 模擬試験 App"
-excerpt: "一个基于 Web 的日商簿记3级模拟考试应用，支持随机抽题与自动评分。<br/><img src='/images/boki-preview.png'>"
+excerpt: "日商簿記3級 Web模試アプリ（ランダム出題・自動採点機能付き） · by Kouzen Jo。<br/><img src='/images/boki-preview.png'>"
 collection: portfolio
 ---
 
