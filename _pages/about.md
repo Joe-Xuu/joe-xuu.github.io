@@ -16,3 +16,5 @@ My research interest includes [database](https://sites.google.com/view/dpl-sfc),
 I'm also a film director, a writer, a composer, and a band member. You can check out these cool stuffs I've made in [Works](/works/)!
 
 Take a look of my [CV](/cv/) for more detailed information.
+
+There are also some useful web tools on this site, for example: [簿記3級 模擬試験](/boki/). Feel free to explore them!
