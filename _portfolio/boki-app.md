@@ -4,13 +4,13 @@ excerpt: "一个基于 Web 的日商簿记3级模拟考试应用，支持随机�
 collection: portfolio
 ---
 
-这是一个我开发的日商簿记3级模拟考试 Web App。
+This is a 日商簿記3級 模擬試験 Web App, you can take free web test!
 
-## 🎮 [点击这里开始考试](/boki/)
+## 🎮 [click here to start the exam!](/boki/)
 
-### 功能特点
-* **随机抽题**: 每次从题库中随机抽取 15 道题。
-* **动态科目**: 只有相关的勘定科目会显示在下拉菜单中。
-* **完全免费**: 纯前端运行，无需注册。
+Key Features
+Randomized Questions: Randomly selects 15 questions from the question bank for each session.
 
-[直接访问 App](/boki/)
+Dynamic Account Titles: Only relevant account titles are displayed in the dropdown menu.
+
+Completely Free: Runs entirely on the front-end; no registration required.
