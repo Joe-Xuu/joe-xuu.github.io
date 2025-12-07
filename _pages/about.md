@@ -17,6 +17,6 @@ I'm also a film director, a writer, a composer, and a band member. You can check
 
 Take a look of my [CV](/cv/) for more detailed information.
 
-Currently I'm attending the internship at a German software company called [SAP](https://www.sap.com).
+Currently I'm attending the internship at a German software company called [SAP](https://www.sap.com), they make great ERP software!
 
 There are also some useful web tools and mini-games on this site, for example: [簿記3級 模擬試験](/boki/). Feel free to explore them in /portfolios!
