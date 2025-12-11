@@ -75,7 +75,7 @@ Proficiency and Achievement
 * [JASSO Scholarship](https://www.jasso.go.jp/ryugaku/scholarship_j/shoreihi/index.html) Recipient, 2023
 * Yamaoka Kenichi Memorial Scholarship Recipient, 2023~2025
 * Valedictorian for [JCL Foreign Language School](https://www.jclcram.com/ja), 2023.3
-* Chief engineerer & Designer of Keio University's on-campus O2O service platform (c) "Re:Turn"  
+* Chief engineerer & Designer of Keio University's on-campus O2O service platform © "Re:Turn"  
   System Framework: [Re:Turn Framework](https://github.com/Joe-Xuu/sfc-o2o-poc)  
   PoC System: [PoC NFC Lending System](https://github.com/Joe-Xuu/nfc-lending-system)  
   Next Gen Frontend: [LIFF Frontend](https://github.com/Joe-Xuu/megloo-app)  
