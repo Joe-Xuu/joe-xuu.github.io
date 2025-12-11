@@ -71,9 +71,15 @@ Proficiency and Achievement
 * JLPT N1 160/180
 * [EJU](https://www.jasso.go.jp/ryugaku/eju/about/data/result/__icsFiles/afieldfile/2024/06/03/outline_of_results_j_2022-1.pdf) Japanese Test 366/369
 * TOEFL iBT 102/120
+* Nissho Bookkeeping Accounting Certificate Level 3 87/100
 * [JASSO Scholarship](https://www.jasso.go.jp/ryugaku/scholarship_j/shoreihi/index.html) Recipient, 2023
 * Yamaoka Kenichi Memorial Scholarship Recipient, 2023~2025
 * Valedictorian for [JCL Foreign Language School](https://www.jclcram.com/ja), 2023.3
+* Chief engineerer & Designer of Keio University's on-campus O2O service platform "Re:Turn"
+  System Framework: [Re:Turn Framework](https://github.com/Joe-Xuu/sfc-o2o-poc)
+  PoC System: [PoC NFC Lending System](https://github.com/Joe-Xuu/nfc-lending-system)
+  Next Gen Frontend: [LIFF Frontend](https://github.com/Joe-Xuu/megloo-app)
+  
 * Main developer of mobile game “Vampire Survivor Knockoff”　
   * Click to play on Unity.play (Touch-screen Only) [Vampire Survivor Knockoff](https://play.unity.com/ja/games/9224376a-dd9c-48e6-9352-1c5a622a8e6a/vampire-survivor-knockoff "click to play")
 
