@@ -4,12 +4,16 @@
 @media (max-width: 924px) {
   #site-nav .visible-links {
     display: flex !important;
-    width: fit-content !important;
+    justify-content: flex-end !important;
     align-items: center !important;
+    padding-right: 2.8rem !important;
   }
   #site-nav .visible-links li {
     display: inline-flex !important;
     align-items: center !important;
+  }
+  #site-nav .masthead__menu-item--lg {
+    padding-right: 0 !important;
   }
   #site-nav button {
     display: block !important;
@@ -24,7 +28,6 @@
       <nav id="site-nav" class="greedy-nav">
         <button><div class="navicon"></div></button>
         <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg persist"><a href="{{ base_path }}/" aria-label="Home"><i class="fa-solid fa-house"></i></a></li>
           {% for link in site.data.navigation.main %}
             {% if link.url contains 'http' %}
               {% assign domain = '' %}
@@ -36,6 +39,7 @@
           <li id="theme-toggle" class="masthead__menu-item persist tail">
             <a><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
           </li>
+          <li class="masthead__menu-item masthead__menu-item--lg persist"><a href="{{ base_path }}/" aria-label="Home"><i class="fa-solid fa-house"></i></a></li>
         </ul>
         <ul class="hidden-links hidden"></ul>
       </nav>
@@ -47,12 +51,12 @@
 (function () {
   if (window.innerWidth >= 925) return;
 
-  /* move non-persist items to hidden-links before greedy-nav runs */
   var vlinks = document.querySelector('#site-nav .visible-links');
   var hlinks = document.querySelector('#site-nav .hidden-links');
   var btn    = document.querySelector('#site-nav button');
   if (!vlinks || !hlinks) return;
 
+  /* move non-persist items to hidden-links before greedy-nav runs */
   vlinks.querySelectorAll('li:not(.persist)').forEach(function (li) {
     hlinks.appendChild(li);
   });
@@ -64,28 +68,18 @@
     btn.style.setProperty('visibility', 'visible', 'important');
   }
 
-  /* collapse the gap: flex + fit-content so the ul only takes up as much space as its items */
-  vlinks.style.setProperty('display', 'flex', 'important');
-  vlinks.style.setProperty('width', 'fit-content', 'important');
-  vlinks.querySelectorAll('li').forEach(function (li) {
-    li.style.setProperty('display', 'inline-flex', 'important');
-    li.style.setProperty('align-items', 'center', 'important');
-  });
-
   /* override updateNav after main.min.js loads so it doesn't undo our work */
   window.addEventListener('load', function () {
     if (typeof updateNav === 'function') {
       updateNav = function () {
-        var btn = document.querySelector('#site-nav button');
-        if (btn) {
-          btn.classList.remove('hidden');
-          btn.style.setProperty('display', 'block', 'important');
-          btn.style.setProperty('visibility', 'visible', 'important');
+        var b = document.querySelector('#site-nav button');
+        if (b) {
+          b.classList.remove('hidden');
+          b.style.setProperty('display', 'block', 'important');
+          b.style.setProperty('visibility', 'visible', 'important');
         }
         var mh = document.querySelector('.masthead');
-        if (mh) {
-          document.body.style.paddingTop = mh.offsetHeight + 'px';
-        }
+        if (mh) { document.body.style.paddingTop = mh.offsetHeight + 'px'; }
       };
       updateNav();
     }
