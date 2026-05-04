@@ -49,6 +49,22 @@ $(document).ready(function () {
   // These should be the same as the settings in _variables.scss
   const scssLarge = 925; // pixels
 
+  /* On mobile, move all nav items (except home + theme-toggle) into
+     the hidden-links dropdown so the topbar stays clean */
+  function mobileNavCollapse() {
+    var $vlinks = $('#site-nav .visible-links');
+    var $hlinks = $('#site-nav .hidden-links');
+    var $btn    = $('#site-nav button');
+    if ($(window).width() < scssLarge) {
+      $vlinks.children('li:not(.persist)').each(function () {
+        $(this).prependTo($hlinks);
+      });
+      $btn.removeClass('hidden');
+    }
+  }
+  mobileNavCollapse();
+  $(window).on('resize', mobileNavCollapse);
+
   // Sticky footer
   var bumpIt = function () {
     $("body").css("margin-bottom", $(".page__footer").outerHeight(true));

@@ -255,14 +255,21 @@
         transition: $global-transition;
         -webkit-transform: scaleX(0);
             -ms-transform: scaleX(0);
-                transform: scaleX(0); /* hide */
+                transform: scaleX(0);
       }
 
       &:hover:before {
         -webkit-transform: scaleX(1);
             -ms-transform: scaleX(1);
-                transform: scaleX(1); /* reveal */
+                transform: scaleX(1);
       }
+    }
+  }
+
+  /* on mobile: force hamburger button always visible */
+  @media (max-width: 924px) {
+    button {
+      display: block !important;
     }
   }
 
