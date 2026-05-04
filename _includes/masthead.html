@@ -1,5 +1,23 @@
 {% include base_path %}
 
+<style>
+@media (max-width: 924px) {
+  #site-nav .visible-links {
+    display: flex !important;
+    width: fit-content !important;
+    align-items: center !important;
+  }
+  #site-nav .visible-links li {
+    display: inline-flex !important;
+    align-items: center !important;
+  }
+  #site-nav button {
+    display: block !important;
+    visibility: visible !important;
+  }
+}
+</style>
+
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
