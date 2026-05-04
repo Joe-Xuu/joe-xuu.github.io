@@ -266,14 +266,15 @@
     }
   }
 
-  /* on mobile: force hamburger button always visible,
-     and hide all non-persist nav items from the visible bar */
+  /* on mobile: hide non-persist nav items, always show hamburger button
+     use !important to override .hidden class added by greedy-nav JS */
   @media (max-width: 924px) {
-    button {
-      display: block !important;
-    }
     .visible-links li:not(.persist) {
       display: none !important;
+    }
+    button {
+      display: block !important;
+      visibility: visible !important;
     }
   }
 
