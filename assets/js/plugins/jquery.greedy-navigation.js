@@ -16,14 +16,11 @@ var mobileBreakpoint = 925;
 
 function updateNav() {
 
-  /* on mobile: keep all non-persist items in hidden-links, always show button */
+  /* on mobile: items already moved by inline script in masthead.html,
+     just ensure button is visible and return */
   if (window.innerWidth < mobileBreakpoint) {
-    $vlinks.children('li:not(.persist)').each(function () {
-      breaks.push(0);
-      $(this).prependTo($hlinks);
-    });
     $btn.removeClass('hidden');
-    $btn.attr("count", $hlinks.children().length);
+    $btn.css({'display': 'block', 'visibility': 'visible'});
     var mh = $('.masthead').height();
     $('body').css('padding-top', mh + 'px');
     if ($(".author__urls-wrapper button").is(":visible")) {

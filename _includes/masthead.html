@@ -24,3 +24,24 @@
     </div>
   </div>
 </div>
+
+<script>
+/* Move all non-persist nav items into hidden-links on mobile.
+   Runs inline before greedy-nav JS so items are in the right place from the start. */
+(function () {
+  if (window.innerWidth >= 925) return;
+  var vlinks = document.querySelector('#site-nav .visible-links');
+  var hlinks = document.querySelector('#site-nav .hidden-links');
+  var btn    = document.querySelector('#site-nav button');
+  if (!vlinks || !hlinks) return;
+  var items = vlinks.querySelectorAll('li:not(.persist)');
+  items.forEach(function (li) {
+    hlinks.appendChild(li);
+  });
+  if (btn) {
+    btn.classList.remove('hidden');
+    btn.style.display = 'block';
+    btn.style.visibility = 'visible';
+  }
+})();
+</script>
