@@ -273,6 +273,11 @@
       display: block !important;
       visibility: visible !important;
     }
+    /* switch from table layout to flex so home + theme-toggle sit together on the left */
+    .visible-links {
+      display: flex;
+      align-items: center;
+    }
   }
 
   .hidden-links {
