@@ -372,7 +372,7 @@
 
   /* ── key handling ─────────────────────────────────── */
   document.addEventListener('keydown', function (e) {
-    // ` backtick to open/close
+    /* backtick to open/close */
     if (e.key === '`' && !e.ctrlKey && !e.altKey && !e.metaKey) {
       var tag = document.activeElement && document.activeElement.tagName;
       if (tag === 'INPUT' || tag === 'TEXTAREA') return;
@@ -406,7 +406,7 @@
     if (e.target === overlay) closeTerminal();
   });
 
-  // keep input focused when clicking anywhere in terminal
+  /* keep input focused when clicking anywhere in terminal */
   document.getElementById('cli-body').addEventListener('click', function(){
     input.focus();
   });

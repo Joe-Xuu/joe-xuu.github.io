@@ -121,7 +121,7 @@
 
 <script>
 (function () {
-  // Only show once per browser session (new tab = show, refresh = skip)
+  /* Only show once per browser session (new tab = show, refresh = skip) */
   if (sessionStorage.getItem('splashShown')) {
     document.getElementById('splash-intro').style.display = 'none';
     return;
@@ -144,7 +144,7 @@
     setTimeout(function () { splash.style.display = 'none'; }, 650);
   }
 
-  // typing speed: starts faster, natural variation
+  /* typing speed: natural variation */
   function typeNext() {
     if (done) return;
     if (i < text.length) {
@@ -153,15 +153,15 @@
       const delay = 55 + Math.random() * 45;
       setTimeout(typeNext, delay);
     } else {
-      // finished typing — auto-dismiss after a pause
+      /* finished typing — auto-dismiss after a pause */
       setTimeout(dismiss, 1600);
     }
   }
 
-  // start typing after brief pause (let scan line establish)
+  /* start typing after brief pause */
   setTimeout(typeNext, 700);
 
-  // skip on any interaction
+  /* skip on any interaction */
   document.addEventListener('keydown', dismiss, { once: true });
   splash.addEventListener('click', dismiss, { once: true });
 })();
