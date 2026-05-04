@@ -10,8 +10,9 @@
   const nekoEl = document.createElement("div");
   let persistPosition = true;
 
-  let nekoPosX = 32;
-  let nekoPosY = 32;
+  /* start at bottom-right to avoid overlapping top-left nav on mobile */
+  let nekoPosX = window.innerWidth  - 48;
+  let nekoPosY = window.innerHeight - 48;
 
   let mousePosX = 0;
   let mousePosY = 0;
