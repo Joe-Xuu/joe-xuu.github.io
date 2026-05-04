@@ -26,32 +26,51 @@
 </div>
 
 <script>
-/* Move all non-persist nav items into hidden-links on mobile.
-   Runs inline before greedy-nav JS so items are in the right place from the start. */
 (function () {
   if (window.innerWidth >= 925) return;
+
+  /* move non-persist items to hidden-links before greedy-nav runs */
   var vlinks = document.querySelector('#site-nav .visible-links');
   var hlinks = document.querySelector('#site-nav .hidden-links');
   var btn    = document.querySelector('#site-nav button');
   if (!vlinks || !hlinks) return;
 
-  /* move non-persist items to dropdown */
-  var items = vlinks.querySelectorAll('li:not(.persist)');
-  items.forEach(function (li) {
+  vlinks.querySelectorAll('li:not(.persist)').forEach(function (li) {
     hlinks.appendChild(li);
   });
 
   /* force hamburger visible */
   if (btn) {
     btn.classList.remove('hidden');
-    btn.style.cssText = 'display:block!important;visibility:visible!important;';
+    btn.style.setProperty('display', 'block', 'important');
+    btn.style.setProperty('visibility', 'visible', 'important');
   }
 
-  /* fix visible-links layout: collapse table into flex so icons sit together */
-  vlinks.style.cssText = 'display:flex!important;align-items:center!important;';
-  var liItems = vlinks.querySelectorAll('li');
-  liItems.forEach(function (li) {
-    li.style.cssText = 'display:flex!important;align-items:center!important;';
+  /* collapse the gap: flex + fit-content so the ul only takes up as much space as its items */
+  vlinks.style.setProperty('display', 'flex', 'important');
+  vlinks.style.setProperty('width', 'fit-content', 'important');
+  vlinks.querySelectorAll('li').forEach(function (li) {
+    li.style.setProperty('display', 'inline-flex', 'important');
+    li.style.setProperty('align-items', 'center', 'important');
+  });
+
+  /* override updateNav after main.min.js loads so it doesn't undo our work */
+  window.addEventListener('load', function () {
+    if (typeof updateNav === 'function') {
+      updateNav = function () {
+        var btn = document.querySelector('#site-nav button');
+        if (btn) {
+          btn.classList.remove('hidden');
+          btn.style.setProperty('display', 'block', 'important');
+          btn.style.setProperty('visibility', 'visible', 'important');
+        }
+        var mh = document.querySelector('.masthead');
+        if (mh) {
+          document.body.style.paddingTop = mh.offsetHeight + 'px';
+        }
+      };
+      updateNav();
+    }
   });
 })();
 </script>
