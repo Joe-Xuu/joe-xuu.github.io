@@ -34,14 +34,24 @@
   var hlinks = document.querySelector('#site-nav .hidden-links');
   var btn    = document.querySelector('#site-nav button');
   if (!vlinks || !hlinks) return;
+
+  /* move non-persist items to dropdown */
   var items = vlinks.querySelectorAll('li:not(.persist)');
   items.forEach(function (li) {
     hlinks.appendChild(li);
   });
+
+  /* force hamburger visible */
   if (btn) {
     btn.classList.remove('hidden');
-    btn.style.display = 'block';
-    btn.style.visibility = 'visible';
+    btn.style.cssText = 'display:block!important;visibility:visible!important;';
   }
+
+  /* fix visible-links layout: collapse table into flex so icons sit together */
+  vlinks.style.cssText = 'display:flex!important;align-items:center!important;';
+  var liItems = vlinks.querySelectorAll('li');
+  liItems.forEach(function (li) {
+    li.style.cssText = 'display:flex!important;align-items:center!important;';
+  });
 })();
 </script>
