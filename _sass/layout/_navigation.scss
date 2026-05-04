@@ -273,10 +273,16 @@
       display: block !important;
       visibility: visible !important;
     }
-    /* switch from table layout to flex so home + theme-toggle sit together on the left */
     .visible-links {
-      display: flex;
-      align-items: center;
+      display: flex !important;
+      align-items: center !important;
+    }
+    .visible-links li {
+      display: flex !important;
+      align-items: center !important;
+    }
+    #theme-toggle {
+      margin-left: 0 !important;
     }
   }
 
