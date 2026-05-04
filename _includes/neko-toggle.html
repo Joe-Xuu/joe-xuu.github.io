@@ -1,0 +1,158 @@
+<!-- bottom-right floating buttons: neko toggle + CLI launcher -->
+<div id="fab-group">
+
+  <!-- CLI button -->
+  <button id="cli-fab" aria-label="Open terminal" title="Open terminal  ( ` )">
+    <svg viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- > prompt -->
+      <polyline points="1,3 6,7 1,11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- _ underscore -->
+      <line x1="9" y1="11" x2="17" y2="11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>
+  </button>
+
+  <!-- Neko toggle button — pixel cat head drawn in SVG -->
+  <button id="neko-toggle" aria-label="Toggle neko cat" title="Toggle neko cat">
+    <!-- 16×16 pixel cat face, each rect = 1 pixel unit -->
+    <svg id="neko-fab-svg" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" shape-rendering="crispEdges">
+      <!-- ears -->
+      <rect x="1" y="0" width="3" height="3" fill="currentColor"/>
+      <rect x="12" y="0" width="3" height="3" fill="currentColor"/>
+      <!-- inner ear -->
+      <rect x="2" y="1" width="1" height="1" fill="var(--neko-ear-inner)"/>
+      <rect x="13" y="1" width="1" height="1" fill="var(--neko-ear-inner)"/>
+      <!-- head -->
+      <rect x="1" y="3" width="14" height="9" fill="currentColor"/>
+      <!-- eyes -->
+      <rect x="3" y="5" width="3" height="2" fill="var(--neko-bg)"/>
+      <rect x="10" y="5" width="3" height="2" fill="var(--neko-bg)"/>
+      <!-- pupils -->
+      <rect x="4" y="5" width="1" height="2" fill="var(--neko-pupil)"/>
+      <rect x="11" y="5" width="1" height="2" fill="var(--neko-pupil)"/>
+      <!-- nose -->
+      <rect x="7" y="8" width="2" height="1" fill="var(--neko-nose)"/>
+      <!-- mouth -->
+      <rect x="6" y="9" width="1" height="1" fill="currentColor" opacity="0.5"/>
+      <rect x="9" y="9" width="1" height="1" fill="currentColor" opacity="0.5"/>
+      <!-- whiskers left -->
+      <rect x="0" y="7" width="3" height="1" fill="currentColor" opacity="0.4"/>
+      <rect x="0" y="9" width="3" height="1" fill="currentColor" opacity="0.4"/>
+      <!-- whiskers right -->
+      <rect x="13" y="7" width="3" height="1" fill="currentColor" opacity="0.4"/>
+      <rect x="13" y="9" width="3" height="1" fill="currentColor" opacity="0.4"/>
+      <!-- chin -->
+      <rect x="3" y="12" width="10" height="2" fill="currentColor"/>
+    </svg>
+  </button>
+
+</div>
+
+<style>
+:root {
+  --neko-bg      : #0d0d18;
+  --neko-pupil   : #0d0d18;
+  --neko-nose    : #f9a8d4;
+  --neko-ear-inner: #f9a8d4;
+}
+html[data-theme="dark"] {
+  --neko-bg      : #0f0f17;
+}
+
+#fab-group {
+  position: fixed;
+  bottom: 1.2rem;
+  right: 1.2rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+/* shared pill style */
+#fab-group button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  border: 1px solid rgba(129, 140, 248, 0.3);
+  background: rgba(13, 13, 24, 0.82);
+  color: rgba(129, 140, 248, 0.85);
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: border-color 0.18s, color 0.18s, background 0.18s, transform 0.15s;
+  user-select: none;
+  padding: 0;
+}
+#fab-group button:hover {
+  border-color: rgba(129, 140, 248, 0.75);
+  color: #a5b4fc;
+  background: rgba(13, 13, 24, 0.95);
+  transform: scale(1.08);
+}
+#fab-group button:active {
+  transform: scale(0.95);
+}
+
+/* CLI button icon size */
+#cli-fab svg {
+  width: 1.15rem;
+  height: 0.9rem;
+}
+
+/* neko icon size */
+#neko-toggle svg {
+  width: 1.3rem;
+  height: 1.3rem;
+  image-rendering: pixelated;
+}
+
+/* off state — desaturated */
+#neko-toggle.neko-off {
+  border-color: rgba(148, 163, 184, 0.18);
+  color: rgba(148, 163, 184, 0.3);
+}
+#neko-toggle.neko-off:hover {
+  color: rgba(148, 163, 184, 0.6);
+  border-color: rgba(148, 163, 184, 0.4);
+}
+</style>
+
+<script>
+(function () {
+  /* ── neko toggle ── */
+  var nekoBtn = document.getElementById('neko-toggle');
+  var hidden  = localStorage.getItem('nekoHidden') === '1';
+
+  function applyNeko() {
+    var cat = document.getElementById('oneko');
+    if (!cat) return;
+    if (hidden) {
+      cat.style.display = 'none';
+      nekoBtn.classList.add('neko-off');
+      nekoBtn.setAttribute('title', 'Neko: off — click to enable');
+    } else {
+      cat.style.display = '';
+      nekoBtn.classList.remove('neko-off');
+      nekoBtn.setAttribute('title', 'Neko: on — click to disable');
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', applyNeko);
+  applyNeko();
+
+  nekoBtn.addEventListener('click', function () {
+    hidden = !hidden;
+    localStorage.setItem('nekoHidden', hidden ? '1' : '0');
+    applyNeko();
+  });
+
+  /* ── CLI button ── */
+  document.getElementById('cli-fab').addEventListener('click', function () {
+    if (typeof window.openCLI === 'function') window.openCLI();
+  });
+})();
+</script>

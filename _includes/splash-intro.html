@@ -1,0 +1,168 @@
+<div id="splash-intro" aria-hidden="true">
+  <div class="splash-scan"></div>
+  <div class="splash-content">
+    <h1 class="splash-title"><span id="splash-typed"></span><span class="splash-cursor">█</span></h1>
+    <p class="splash-hint">[ press any key or click to skip ]</p>
+  </div>
+</div>
+
+<style>
+#splash-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #0a0a12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#splash-intro.splash-exit {
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+/* scan line sweep */
+.splash-scan {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(129, 140, 248, 0.06) 48%,
+    rgba(129, 140, 248, 0.15) 50%,
+    rgba(129, 140, 248, 0.06) 52%,
+    transparent 100%
+  );
+  background-size: 100% 200%;
+  animation: scan 2.4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scan {
+  0%   { background-position: 0 -100%; }
+  100% { background-position: 0 200%; }
+}
+
+/* subtle grid overlay */
+#splash-intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(129,140,248,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(129,140,248,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+
+.splash-content {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.splash-sub {
+  font-family: 'Space Grotesk', 'DM Sans', sans-serif;
+  font-size: clamp(0.7rem, 1.5vw, 0.85rem);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(129, 140, 248, 0.7);
+  margin: 0 0 1.2rem;
+  opacity: 0;
+  animation: fadeUp 0.5s ease 0.3s forwards;
+}
+
+.splash-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.6rem, 4vw, 3rem);
+  color: #f1f5f9;
+  letter-spacing: 0.05em;
+  margin: 0 0 2rem;
+  line-height: 1.2;
+  min-height: 1.3em;
+}
+
+.splash-cursor {
+  display: inline-block;
+  color: #818cf8;
+  animation: blink 0.8s step-end infinite;
+  font-weight: 400;
+  font-size: 0.85em;
+  vertical-align: baseline;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.splash-hint {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(0.65rem, 1.2vw, 0.75rem);
+  letter-spacing: 0.15em;
+  color: rgba(148, 163, 184, 0.45);
+  margin: 0;
+  opacity: 0;
+  animation: fadeUp 0.5s ease 0.6s forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<script>
+(function () {
+  // Only show once per browser session (new tab = show, refresh = skip)
+  if (sessionStorage.getItem('splashShown')) {
+    document.getElementById('splash-intro').style.display = 'none';
+    return;
+  }
+  sessionStorage.setItem('splashShown', '1');
+
+  const el     = document.getElementById('splash-typed');
+  const cursor = document.querySelector('.splash-cursor');
+  const splash = document.getElementById('splash-intro');
+  const text   = 'Welcome to Kouzen Jo\'s HP';
+
+  let i = 0;
+  let done = false;
+
+  function dismiss() {
+    if (done) return;
+    done = true;
+    cursor.style.display = 'none';
+    splash.classList.add('splash-exit');
+    setTimeout(function () { splash.style.display = 'none'; }, 650);
+  }
+
+  // typing speed: starts faster, natural variation
+  function typeNext() {
+    if (done) return;
+    if (i < text.length) {
+      el.textContent += text[i];
+      i++;
+      const delay = 55 + Math.random() * 45;
+      setTimeout(typeNext, delay);
+    } else {
+      // finished typing — auto-dismiss after a pause
+      setTimeout(dismiss, 1600);
+    }
+  }
+
+  // start typing after brief pause (let scan line establish)
+  setTimeout(typeNext, 700);
+
+  // skip on any interaction
+  document.addEventListener('keydown', dismiss, { once: true });
+  splash.addEventListener('click', dismiss, { once: true });
+})();
+</script>

@@ -1,24 +1,23 @@
 /* ==========================================================================
-   DEFAULT THEME
+   DEFAULT THEME — Phase 1 UI Upgrade
    ========================================================================== */
 
-/* Color codes used for the theme */
+/* SCSS tokens (used in SCSS expressions) */
 $gray                       : #7a8288;
 $dark-gray                  : mix(#000, $gray, 40%);
 $darker-gray                : mix(#000, $gray, 60%);
 $light-gray                 : #9ba1a6;
 $lighter-gray               : mix(#fff, $gray, 90%);
 
-/* Color codes used for the site */
-$danger-color               : #ee5f5b;
-$info-color                 : #2f7f93;
-$notice-color               : #7a8288;
-$success-color              : #62c462;
-$warning-color              : #f89406;
+$danger-color               : #ef4444;
+$info-color                 : #3b82f6;
+$notice-color               : #6b7280;
+$success-color              : #22c55e;
+$warning-color              : #f59e0b;
 
-/* Other basic settings for the template */
-$border-radius              : 4px;
-$box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
+/* Layout tokens */
+$border-radius              : 8px;
+$box-shadow                 : 0 2px 8px rgba(0, 0, 0, 0.08);
 $global-transition          : all 0.2s ease-in-out;
 $masthead-height            : 70px;
 $navicon-width              : 28px;
@@ -26,22 +25,53 @@ $navicon-height             : 4px;
 $sidebar-link-max-width     : 250px;
 $sidebar-screen-min-width   : 1024px;
 
-/* Default light theme for the site */
+/* Light theme CSS custom properties */
 :root {
-    --global-base-color                 : #{$gray};
-    --global-bg-color                   : #fff;
-    --global-footer-bg-color            : #f2f3f3;
-    --global-border-color               : #{$lighter-gray};
-    --global-dark-border-color          : #bdc1c4;
-    --global-code-background-color      : #fafafa;
-    --global-code-text-color            : #{$darker-gray};
-    --global-fig-caption-color          : mix(#fff,  #{$dark-gray}, 25%);
-    --global-link-color                 : #52adc8;
-    --global-link-color-hover           : mix(#000, #2f7f93, 25%);
-    --global-link-color-visited         : mix(#fff, #2f7f93, 25%);  
-    --global-masthead-link-color        : #{$dark-gray};
-    --global-masthead-link-color-hover  : mix(#000, #{$gray}, 25%);    
-    --global-text-color                 : #{$dark-gray};
-    --global-text-color-light           : #{$light-gray};
-    --global-thead-color                : #{$lighter-gray};
+    /* Core palette */
+    --global-accent-color                : #6c63ff;
+    --global-accent-hover                : #5a52d5;
+
+    /* Backgrounds */
+    --global-bg-color                    : #fafaf9;
+    --global-surface-color               : #ffffff;
+    --global-footer-bg-color             : #f3f4f6;
+    --global-masthead-bg                 : rgba(250, 250, 249, 0.82);
+
+    /* Text */
+    --global-text-color                  : #1e1e2e;
+    --global-text-color-light            : #6b7280;
+    --global-base-color                  : #4b5563;
+    --global-fig-caption-color           : #9ca3af;
+
+    /* Borders */
+    --global-border-color                : #e5e7eb;
+    --global-dark-border-color           : #d1d5db;
+
+    /* Links */
+    --global-link-color                  : #6c63ff;
+    --global-link-color-hover            : #5a52d5;
+    --global-link-color-visited          : #7c73ff;
+
+    /* Masthead nav */
+    --global-masthead-link-color         : #374151;
+    --global-masthead-link-color-hover   : #1e1e2e;
+
+    /* Code */
+    --global-code-background-color       : #f8f8ff;
+    --global-code-text-color             : #3730a3;
+    --global-thead-color                 : #f3f4f6;
+
+    /* Shadow scale */
+    --shadow-xs  : 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-sm  : 0 2px 8px rgba(0, 0, 0, 0.07);
+    --shadow-md  : 0 4px 16px rgba(0, 0, 0, 0.09);
+    --shadow-lg  : 0 8px 32px rgba(0, 0, 0, 0.11);
+    --shadow-xl  : 0 16px 48px rgba(0, 0, 0, 0.14);
+
+    /* Radius scale */
+    --radius-sm  : 6px;
+    --radius-md  : 10px;
+    --radius-lg  : 16px;
+    --radius-xl  : 24px;
+    --radius-full: 9999px;
 }

@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-site_theme               : "default"
+site_theme               : "dark"
 title                    : "Kouzen Jo's personal website"
 title_separator          : "-"
 name                     : &name "Your Name"
@@ -25,8 +25,8 @@ author:
   avatar           : "profile-pic.png"
   name             : "Joe"
   pronouns         : # example: "she/her"  
-  bio              : "Struggling with SILO now"
-  location         : "🇯🇵Japan - Kanagawa"
+  bio              : "Struggling with Agentic AI"
+  location         : "Japan - Kanagawa"
   employer         : "Keio University"
   uri              : # URL
   email            : #"***[at]keio.jp" 

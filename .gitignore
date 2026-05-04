@@ -15,3 +15,10 @@ package-lock.json
 # Ignore the vendor file and bundle for alternative installation
 vendor/
 .bundle/
+
+# Local-only files (not for production)
+_config_local.yml
+Gemfile.lock.bak
+
+# Claude Code memory (local session data)
+.claude/

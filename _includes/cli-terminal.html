@@ -1,0 +1,417 @@
+<!-- CLI Terminal Easter Egg — press ` (backtick) to open -->
+<div id="cli-overlay" aria-hidden="true" style="display:none">
+  <div id="cli-window">
+    <div id="cli-titlebar">
+      <span class="cli-dot cli-dot-red"></span>
+      <span class="cli-dot cli-dot-yellow"></span>
+      <span class="cli-dot cli-dot-green"></span>
+      <span id="cli-title">guest@joe-xuu.github.io — bash</span>
+      <button id="cli-close" aria-label="close">✕</button>
+    </div>
+    <div id="cli-body">
+      <div id="cli-output"></div>
+      <div id="cli-input-line">
+        <span id="cli-prompt">guest@joe-xuu:~$ </span>
+        <input id="cli-input" type="text" autocomplete="off" spellcheck="false" autofocus />
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+#cli-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50000;
+  background: rgba(5, 5, 10, 0.82);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: cli-fade-in 0.18s ease;
+}
+@keyframes cli-fade-in {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+#cli-window {
+  width: min(680px, 92vw);
+  max-height: 70vh;
+  background: #0d0d18;
+  border: 1px solid rgba(129,140,248,0.25);
+  border-radius: 10px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.7), 0 0 0 1px rgba(129,140,248,0.08);
+  display: flex;
+  flex-direction: column;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  font-size: 0.82rem;
+  overflow: hidden;
+}
+
+#cli-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: #14141f;
+  border-bottom: 1px solid rgba(129,140,248,0.12);
+  user-select: none;
+}
+.cli-dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.cli-dot-red    { background: #ff5f57; }
+.cli-dot-yellow { background: #ffbd2e; }
+.cli-dot-green  { background: #28c840; }
+#cli-title {
+  flex: 1;
+  text-align: center;
+  color: rgba(148,163,184,0.6);
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+}
+#cli-close {
+  background: none;
+  border: none;
+  color: rgba(148,163,184,0.4);
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 0 2px;
+  line-height: 1;
+}
+#cli-close:hover { color: #f87171; }
+
+#cli-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 16px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+#cli-output {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.cli-line {
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.cli-line-cmd   { color: #e2e8f0; }
+.cli-line-cmd .cli-ps { color: #818cf8; }
+.cli-line-out   { color: #94a3b8; }
+.cli-line-err   { color: #f87171; }
+.cli-line-accent{ color: #818cf8; }
+.cli-line-dim   { color: rgba(148,163,184,0.45); font-size:0.78rem; }
+.cli-line-title { color: #a5b4fc; font-weight: bold; }
+.cli-line-blank { min-height: 1rem; }
+.cli-ls-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 2px 12px;
+  margin: 2px 0;
+}
+.cli-ls-item { color: #7dd3fc; }
+
+#cli-input-line {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 6px;
+}
+#cli-prompt {
+  color: #818cf8;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+#cli-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #e2e8f0;
+  font-family: inherit;
+  font-size: inherit;
+  flex: 1;
+  caret-color: #818cf8;
+  padding: 0;
+  margin: 0;
+}
+</style>
+
+<script>
+(function () {
+  var overlay  = document.getElementById('cli-overlay');
+  var input    = document.getElementById('cli-input');
+  var output   = document.getElementById('cli-output');
+  var closeBtn = document.getElementById('cli-close');
+  var cwd      = '~';
+  var history  = [];
+  var histIdx  = -1;
+  var opened   = false;
+
+  /* ── filesystem definition ────────────────────────── */
+  var pages = {
+    '~':            { type: 'dir', children: ['works','publications','talks','teaching','portfolio','blog','cv','about'] },
+    'works':        { type: 'dir', url: '/works/',        desc: 'Selected works & projects' },
+    'publications': { type: 'dir', url: '/publications/', desc: 'Academic publications' },
+    'talks':        { type: 'dir', url: '/talks/',        desc: 'Invited talks & presentations' },
+    'teaching':     { type: 'dir', url: '/teaching/',     desc: 'Teaching experience' },
+    'portfolio':    { type: 'dir', url: '/portfolio/',    desc: 'Portfolio gallery' },
+    'blog':         { type: 'dir', url: '/year-archive/', desc: 'Blog posts archive' },
+    'cv':           { type: 'dir', url: '/cv/',           desc: 'Curriculum Vitae' },
+    'about':        { type: 'dir', url: '/',              desc: 'About me (home)' },
+  };
+
+  var readme = {
+    'works':        'Works & Projects\n================\nOngoing and past research projects.\nRun `open works` to visit the page.',
+    'publications': 'Publications\n============\nPeer-reviewed papers and preprints.\nRun `open publications` to visit the page.',
+    'talks':        'Talks\n=====\nInvited talks and conference presentations.\nRun `open talks` to visit the page.',
+    'teaching':     'Teaching\n========\nCourses and tutorials at Keio University.\nRun `open teaching` to visit the page.',
+    'portfolio':    'Portfolio\n=========\nVisual and interactive project gallery.\nRun `open portfolio` to visit the page.',
+    'blog':         'Blog\n====\nPersonal notes and research diary.\nRun `open blog` to visit the page.',
+    'cv':           'Curriculum Vitae\n================\nFull academic CV.\nRun `open cv` to visit the page.',
+    'about':        'About\n=====\nHi, I\'m Joe — researcher at Keio University, Japan.\nWorking on SILO and related projects.\nRun `open about` to go to the home page.',
+  };
+
+  /* ── helpers ──────────────────────────────────────── */
+  function addLine(text, cls) {
+    var d = document.createElement('div');
+    d.className = 'cli-line ' + (cls || 'cli-line-out');
+    d.innerHTML = text;
+    output.appendChild(d);
+  }
+
+  function addBlank() { addLine('', 'cli-line-blank'); }
+
+  function echoCMD(cmd) {
+    addLine('<span class="cli-ps">' + prompt() + '</span> ' + escHtml(cmd), 'cli-line-cmd');
+  }
+
+  function prompt() {
+    return 'guest@joe-xuu:' + cwd + '$';
+  }
+
+  function escHtml(s) {
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function scrollBottom() {
+    var body = document.getElementById('cli-body');
+    body.scrollTop = body.scrollHeight;
+  }
+
+  /* ── boot message ─────────────────────────────────── */
+  function printBoot() {
+    addLine('joe-xuu.github.io — interactive shell', 'cli-line-accent');
+    addLine('─────────────────────────────────────', 'cli-line-dim');
+    addLine('Type <b>help</b> for available commands.  Press <b>Esc</b> or click ✕ to close.', 'cli-line-dim');
+    addBlank();
+  }
+
+  /* ── commands ─────────────────────────────────────── */
+  var commands = {
+    help: function () {
+      addLine('Available commands:', 'cli-line-title');
+      addBlank();
+      var cmds = [
+        ['help',       'show this message'],
+        ['whoami',     'who are you talking to'],
+        ['ls',         'list pages in current directory'],
+        ['ls -l',      'list pages with descriptions'],
+        ['cd <dir>',   'change to page directory (cd .. to go back)'],
+        ['open <dir>', 'navigate browser to that page'],
+        ['cat <dir>',  'read README for a page  (alias: vim, nano)'],
+        ['pwd',        'print current directory'],
+        ['clear',      'clear terminal'],
+        ['exit',       'close terminal  (also: Esc, `)'],
+      ];
+      cmds.forEach(function(c){
+        addLine('  <span style="color:#7dd3fc;display:inline-block;width:140px">' + c[0] + '</span>' +
+                '<span style="color:#94a3b8">' + c[1] + '</span>', 'cli-line-out');
+      });
+      addBlank();
+    },
+
+    whoami: function () {
+      addBlank();
+      addLine('  Name     : Kouzen Jo (Joe)', 'cli-line-out');
+      addLine('  Role     : Researcher', 'cli-line-out');
+      addLine('  Lab      : Keio University, Japan', 'cli-line-out');
+      addLine('  Project  : SILO (ongoing)', 'cli-line-out');
+      addLine('  GitHub   : github.com/Joe-Xuu', 'cli-line-out');
+      addLine('  Shell    : /bin/imagination', 'cli-line-dim');
+      addBlank();
+    },
+
+    pwd: function () {
+      addLine('/home/guest/' + cwd, 'cli-line-out');
+    },
+
+    ls: function (flags) {
+      var node = pages[cwd];
+      var children = cwd === '~' ? pages['~'].children : Object.keys(pages).filter(function(k){ return k !== '~'; });
+      if (cwd !== '~') { addLine('(use cd .. to return home)', 'cli-line-dim'); return; }
+
+      if (flags === '-l') {
+        addBlank();
+        children.forEach(function(name){
+          var p = pages[name];
+          addLine('  <span class="cli-ls-item" style="display:inline-block;width:140px">' + name + '/</span>' +
+                  '<span style="color:#64748b">' + (p && p.desc || '') + '</span>', 'cli-line-out');
+        });
+        addBlank();
+      } else {
+        var grid = document.createElement('div');
+        grid.className = 'cli-line cli-ls-grid';
+        children.forEach(function(name){
+          var s = document.createElement('span');
+          s.className = 'cli-ls-item';
+          s.textContent = name + '/';
+          grid.appendChild(s);
+        });
+        output.appendChild(grid);
+      }
+    },
+
+    cd: function (arg) {
+      if (!arg || arg === '~') { cwd = '~'; updatePrompt(); return; }
+      if (arg === '..') { cwd = '~'; updatePrompt(); return; }
+      if (pages[arg]) {
+        cwd = arg;
+        updatePrompt();
+        addLine('Entered ' + arg + '/  (run <b>cat ' + arg + '</b> to read info, <b>open ' + arg + '</b> to visit)', 'cli-line-dim');
+      } else {
+        addLine('cd: ' + arg + ': No such directory', 'cli-line-err');
+      }
+    },
+
+    open: function (arg) {
+      var target = arg || cwd;
+      if (target === '~') { window.location.href = '/'; return; }
+      if (pages[target] && pages[target].url) {
+        addLine('Opening ' + target + '...', 'cli-line-dim');
+        setTimeout(function(){ window.location.href = pages[target].url; }, 400);
+      } else {
+        addLine('open: ' + target + ': unknown page', 'cli-line-err');
+      }
+    },
+
+    cat: function (arg) {
+      var target = arg || cwd;
+      if (target === '~') { addLine('README: This is the root of joe-xuu.github.io. Try `ls` to explore.', 'cli-line-out'); return; }
+      if (readme[target]) {
+        addBlank();
+        readme[target].split('\n').forEach(function(l){
+          addLine(escHtml(l) || ' ', 'cli-line-out');
+        });
+        addBlank();
+      } else {
+        addLine('cat: ' + target + ': No such file', 'cli-line-err');
+      }
+    },
+
+    clear: function () {
+      output.innerHTML = '';
+    },
+
+    exit: function () {
+      closeTerminal();
+    },
+  };
+
+  /* vim / nano are aliases for cat */
+  commands.vim  = commands.cat;
+  commands.nano = commands.cat;
+
+  function updatePrompt() {
+    document.getElementById('cli-prompt').textContent = prompt() + ' ';
+  }
+
+  /* ── run a command ────────────────────────────────── */
+  function run(raw) {
+    raw = raw.trim();
+    if (!raw) return;
+    echoCMD(raw);
+    history.unshift(raw);
+    histIdx = -1;
+
+    var parts = raw.split(/\s+/);
+    var cmd   = parts[0].toLowerCase();
+    var arg   = parts.slice(1).join(' ');
+
+    if (commands[cmd]) {
+      commands[cmd](arg);
+    } else {
+      addLine(cmd + ': command not found  (try <b>help</b>)', 'cli-line-err');
+    }
+    scrollBottom();
+  }
+
+  /* ── open / close ─────────────────────────────────── */
+  function openTerminal() {
+    if (opened) return;
+    opened = true;
+    overlay.style.display = 'flex';
+    overlay.removeAttribute('aria-hidden');
+    if (output.children.length === 0) printBoot();
+    setTimeout(function(){ input.focus(); }, 30);
+  }
+
+  function closeTerminal() {
+    opened = false;
+    overlay.style.display = 'none';
+    overlay.setAttribute('aria-hidden', 'true');
+  }
+
+  /* ── key handling ─────────────────────────────────── */
+  document.addEventListener('keydown', function (e) {
+    // ` backtick to open/close
+    if (e.key === '`' && !e.ctrlKey && !e.altKey && !e.metaKey) {
+      var tag = document.activeElement && document.activeElement.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+      e.preventDefault();
+      opened ? closeTerminal() : openTerminal();
+    }
+    if (e.key === 'Escape' && opened) closeTerminal();
+  });
+
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+      run(input.value);
+      input.value = '';
+    }
+    if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (histIdx < history.length - 1) histIdx++;
+      input.value = history[histIdx] || '';
+    }
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (histIdx > 0) histIdx--;
+      else { histIdx = -1; input.value = ''; return; }
+      input.value = history[histIdx] || '';
+    }
+    if (e.key === '`') { e.preventDefault(); closeTerminal(); }
+  });
+
+  closeBtn.addEventListener('click', closeTerminal);
+  overlay.addEventListener('click', function(e){
+    if (e.target === overlay) closeTerminal();
+  });
+
+  // keep input focused when clicking anywhere in terminal
+  document.getElementById('cli-body').addEventListener('click', function(){
+    input.focus();
+  });
+
+  /* expose open to other scripts if needed */
+  window.openCLI = openTerminal;
+})();
+</script>
