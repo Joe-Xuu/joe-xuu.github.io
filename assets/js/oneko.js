@@ -8,7 +8,7 @@
   if (isReducedMotion) return;
 
   const nekoEl = document.createElement("div");
-  let persistPosition = true;
+  let persistPosition = false;
 
   /* start at bottom-right to avoid overlapping top-left nav on mobile */
   let nekoPosX = window.innerWidth  - 48;

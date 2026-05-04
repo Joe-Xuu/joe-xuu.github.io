@@ -17,7 +17,7 @@ var mobileBreakpoint = 925;
 function updateNav() {
 
   /* on mobile: keep all non-persist items in hidden-links, always show button */
-  if ($(window).width() < mobileBreakpoint) {
+  if (window.innerWidth < mobileBreakpoint) {
     $vlinks.children('li:not(.persist)').each(function () {
       breaks.push(0);
       $(this).prependTo($hlinks);
