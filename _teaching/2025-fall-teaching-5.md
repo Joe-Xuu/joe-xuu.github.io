@@ -7,4 +7,4 @@ venue: "Keio University, Faculty of Environment and Information Studies"
 date: 2025, Fall
 location: "Fujisawa, Kanagawa, Japan"
 ---
-TA & Techical Support for sfc record club
+TA & Techical Support for Subculture Factory
