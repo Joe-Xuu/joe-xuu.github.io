@@ -25,11 +25,11 @@ Games
   * Developed by Unity®
   * Click to play on Unity.play (Touch-screen Only) [Vampire Survivor Knockoff](https://play.unity.com/ja/games/9224376a-dd9c-48e6-9352-1c5a622a8e6a/vampire-survivor-knockoff "click to play")
 
-<img src="/images/vam1.png" width=500px>
+<img src="/images/vam1.png" width=300px>
 
-<img src="/images/vam2.png" width=500px>
+<img src="/images/vam2.png" width=300px>
 
-<img src="/images/vam3.png" width=500px>
+<img src="/images/vam3.png" width=300px>
 
 * Castlevaniamania (WIP)
   * Developed by Unity®
