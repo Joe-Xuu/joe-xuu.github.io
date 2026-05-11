@@ -90,6 +90,11 @@ Proficiency and Achievement
 
 <img src="/images/apo1.png" width=500px>
 
+* Director & Leading Actor of horror film "Sisyphus"
+  * Watch on Youtube [Sisyphus](https://youtu.be/Ar7Lp2a3Fy8 "Click to watch")
+
+<img src="/images/sis1.png" width=500px>
+
 * Writer & Producer of audio book "The Eater"
   * Watch on Youtube [The Eater Pentalogy](https://www.youtube.com/watch?v=YXyaFd1sI0Q "Click to watch")
 
