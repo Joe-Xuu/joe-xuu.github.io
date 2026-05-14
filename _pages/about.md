@@ -27,3 +27,6 @@ lastest news
 -----
 [慶應SFC、キャンパス内でリユース容器を本格導入へ](https://cehub.jp/news/keiosfc-reusable-container/)  
 
+[リユース容器をテイクアウトの当たり前に - 朝日新聞](https://www.asahi.com/sp/articles/ASV5C1CH1V5CULOB003M.html)
+
+[ごみゼロ「心地よさ」体験を - 朝日新聞50226号（日刊） 2026年5月12日 地域総合](https://www.asahi.com/sp/articles/ASV5C1CH1V5CULOB003M.html)
