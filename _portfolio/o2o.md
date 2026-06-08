@@ -49,7 +49,7 @@ graph TD
     end
 
     subgraph "Automation"
-        Cron{{UptimeRobot / Cron}}:::cron
+        Cron{UptimeRobot / Cron}:::cron
     end
 
     %% 连线关系

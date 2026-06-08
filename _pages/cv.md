@@ -70,6 +70,7 @@ Proficiency and Achievement
 ======
 * JLPT N1 160/180
 * [EJU](https://www.jasso.go.jp/ryugaku/eju/about/data/result/__icsFiles/afieldfile/2024/06/03/outline_of_results_j_2022-1.pdf) Japanese Test 366/369
+* TOEIC L&R 990/990
 * TOEFL iBT 102/120
 * Nissho Bookkeeping Accounting Certificate Level 3 87/100
 * [JASSO Scholarship](https://www.jasso.go.jp/ryugaku/scholarship_j/shoreihi/index.html) Recipient, 2023
