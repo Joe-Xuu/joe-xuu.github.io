@@ -14,9 +14,9 @@ Games
 * Pong 2.0
   * Developed by Python
 
-<img src="/images/pong1.png" width=500px>
+<img src="/images/pong1.png" width=300px>
 
-<img src="/images/pong2.png" width=500px>
+<img src="/images/pong2.png" width=300px>
 
 * Paper Scissor Stone Online
   * Developed by Python, Multi-player Supported
@@ -48,6 +48,17 @@ Films
 <img src="/images/apo3.png" width=500px>
 
 <img src="/images/apo4.png" width=500px>
+
+* Horror Film "Sisyphus"
+  * Directed and Produced by Kouzen Jo
+  * Year: 2025, Genre: Claustrophobia, Horror
+  * Watch on Youtube [Sisyphus](https://youtu.be/Ar7Lp2a3Fy8 "Click to watch")
+
+<img src="/images/sis1.png" width=500px>
+
+<img src="/images/sis2.png" width=500px>
+
+
 
 Audio Books
 ======
