@@ -8,7 +8,7 @@ redirect_from:
 ---
 ## About Me
 
-### Hi! I'm Kouzen Jo (徐 昊然 / Xu Haoran).
+Hi! I'm **Kouzen Jo (徐 昊然 / Xu Haoran)**.
 
 I'm a 4th-year undergraduate at [Keio University](https://www.keio.ac.jp/ja), Faculty of Environment and Information Studies.
 
