@@ -6,36 +6,45 @@ redirect_from:
   - /about/
   - /about.html
 ---
+  ## about me
+  ------
+  ### Hi! I'm Kouzen Jo (徐 昊然 / Xu Haoran).
 
-about me
-------
-Hi! I'm Kouzen Jo (徐 昊然/Xu Haoran).  
+  I'm a 4th-year undergraduate at [Keio University](https://www.keio.ac.jp/ja), Faculty of Environment and Information Studies.
 
-I'm a 4th year undergraduate student from [Keio University](https://www.keio.ac.jp/ja), faculty of environment and information studies.  
+  **Affiliations**
 
-Previously/Currently affiliated with:   
-[Data Platform Laboratory](https://sites.google.com/view/dpl-sfc),  
-[SFC Record Club](https://sfcindiepress.com/sfc-record-club),  
-[Subculture Factory](https://syllabus.sfc.keio.ac.jp/courses/2024_48242?locale=en),  
-[Advanced Quantum Architeture Lab](https://aqua.sfc.wide.ad.jp/),  
-[SQAI](https://sqai.jp/),  
-[Wada Lab](https://www.instagram.com/wada__lab/),  
-[SAP](http://sap.com/).
+  | | |
+  |---|---|
+  | [Data Platform Laboratory](https://sites.google.com/view/dpl-sfc) | [SFC Record Club](https://sfcindiepress.com/sfc-record-club) |
+  | [Subculture Factory](https://syllabus.sfc.keio.ac.jp/courses/2024_48242?locale=en) | [Advanced Quantum Architecture Lab](https://aqua.sfc.wide.ad.jp/) |
+  | [SQAI](https://sqai.jp/) | [Wada Lab](https://www.instagram.com/wada__lab/) |
+  | [SAP](https://www.sap.com) | |
 
-My research interest includes [database](https://sites.google.com/view/dpl-sfc), web service architecture, RAG, RAP framework, quantum computing and game engineering.  
-I'm also a film director, a writer, a composer, and a band member. You can check out these cool stuffs I've made in [Works](/works/)!  
-Take a look of my [CV](/cv/) for more detailed information.  
+  **Research Interests**
 
-Currently I'm building AI Agents at a German software company called [SAP](https://www.sap.com), they make great ERP software.  
+  - [Database Systems](https://github.com/Joe-Xuu/havana)
+  - Agentic AI
+  - [Web Service Architecture](https://github.com/Joe-Xuu/return-system-landscape)
+  - RAP Framework
+  - Quantum Computing
+  - Game Engineering
 
-I designed and implemented an O2O service platform (Re:Turn System) for [Keio University](https://www.keio.ac.jp/ja) as the chief engineer, cooperating with [Wada Lab](https://www.sfc.keio.ac.jp/about_sfc/sustainability/report2024_04.html), [K-CR Inc.](https://k-cr.jp), [Asahi-Youus(https://www.asahi-youus.com/)], [Kanagawa Government(https://www.pref.kanagawa.jp/docs/p3k/sdgs/r8univplazero.html)] and [Megloo Inc.](https://megloo.jp) It will become an infrastructure of the campus!  
+  I'm also a film director, writer, composer, and band member — check out [Works](/works/) to see what I've made!
+  For more details, see my [CV](/cv/).
 
-There are also some useful web tools and mini-games on this site, for example: [簿記3級 模擬試験](/boki/). Feel free to explore them in /portfolios!  
+  **Currently** building AI Agents at [SAP](https://www.sap.com), a German software company known for great ERP software.
 
-lastest news
------
-[慶應SFC、キャンパス内でリユース容器を本格導入へ](https://cehub.jp/news/keiosfc-reusable-container/)  
+  **Re:Turn System** — I designed and implemented an O2O service platform for [Keio University](https://www.keio.ac.jp/ja) as chief engineer, in collaboration with [Wada
+  Lab](https://www.sfc.keio.ac.jp/about_sfc/sustainability/report2024_04.html), [K-CR Inc.](https://k-cr.jp), [Asahi-Youus](https://www.asahi-youus.com/), [Kanagawa
+  Government](https://www.pref.kanagawa.jp/docs/p3k/sdgs/r8univplazero.html), and [Megloo Inc.](https://megloo.jp) — set to become a permanent campus infrastructure.
 
-[リユース容器をテイクアウトの当たり前に - 朝日新聞](https://www.asahi.com/sp/articles/ASV5C1CH1V5CULOB003M.html)
+  There are also web tools and mini-games on this site (e.g. [簿記3級 模擬試験](/boki/)). Feel free to explore in `/portfolios`!
 
-[ごみゼロ「心地よさ」体験を - 朝日新聞50226号（日刊） 2026年5月12日 地域総合](https://www.asahi.com/sp/articles/ASV5C1CH1V5CULOB003M.html)
+  ---
+
+  ## latest news
+
+  - [慶應SFC、キャンパス内でリユース容器を本格導入へ — CEHub](https://cehub.jp/news/keiosfc-reusable-container/)
+  - [リユース容器をテイクアウトの当たり前に — 朝日新聞](https://www.asahi.com/sp/articles/ASV5C1CH1V5CULOB003M.html)
+  - [ごみゼロ「心地よさ」体験を — 朝日新聞 2026年5月12日](https://www.asahi.com/sp/articles/ASV5C1CH1V5CULOB003M.html)
