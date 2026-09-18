@@ -26,7 +26,7 @@ My research interest includes [database](https://sites.google.com/view/dpl-sfc),
 I'm also a film director, a writer, a composer, and a band member. You can check out these cool stuffs I've made in [Works](/works/)!  
 Take a look of my [CV](/cv/) for more detailed information.  
 
-Currently I'm building AI Agent at a German software company called [SAP](https://www.sap.com), they make great ERP software.  
+Currently I'm building AI Agents at a German software company called [SAP](https://www.sap.com), they make great ERP software.  
 
 I designed and implemented an O2O service platform (Re:Turn System) for [Keio University](https://www.keio.ac.jp/ja) as the chief engineer, cooperating with [Wada Lab](https://www.sfc.keio.ac.jp/about_sfc/sustainability/report2024_04.html), [K-CR Inc.](https://k-cr.jp), [Asahi-Youus(https://www.asahi-youus.com/)], [Kanagawa Government(https://www.pref.kanagawa.jp/docs/p3k/sdgs/r8univplazero.html)] and [Megloo Inc.](https://megloo.jp) It will become an infrastructure of the campus!  
 
