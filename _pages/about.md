@@ -14,6 +14,7 @@ I'm a 4th-year undergraduate at [Keio University](https://www.keio.ac.jp/ja), Fa
 
 ### Affiliations
 ---
+
 | Research & Engineering | Arts & Community |
 |---|---|
 | [Data Platform Laboratory](https://sites.google.com/view/dpl-sfc) | [SFC Record Club](https://sfcindiepress.com/sfc-record-club) |
