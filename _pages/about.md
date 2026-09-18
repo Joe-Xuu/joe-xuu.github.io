@@ -12,7 +12,7 @@ about me
 Hi! I'm Kouzen Jo (徐 昊然/Xu Haoran).  
 
 I'm a 4th year undergraduate student from [Keio University](https://www.keio.ac.jp/ja), faculty of environment and information studies.  
-Previously/Currently affiliated with:   
+I previously/currently affiliated with:   
 [Wada Lab](https://www.instagram.com/wada__lab/),  
 [Data Platform Laboratory](https://sites.google.com/view/dpl-sfc),  
 [SFC Record Club](https://sfcindiepress.com/sfc-record-club),  
