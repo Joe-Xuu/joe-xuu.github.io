@@ -14,12 +14,12 @@ Hi! I'm Kouzen Jo (徐 昊然/Xu Haoran).
 I'm a 4th year undergraduate student from [Keio University](https://www.keio.ac.jp/ja), faculty of environment and information studies.  
 
 Previously/Currently affiliated with:   
-[Wada Lab](https://www.instagram.com/wada__lab/),  
 [Data Platform Laboratory](https://sites.google.com/view/dpl-sfc),  
 [SFC Record Club](https://sfcindiepress.com/sfc-record-club),  
 [Subculture Factory](https://syllabus.sfc.keio.ac.jp/courses/2024_48242?locale=en),  
 [Advanced Quantum Architeture Lab](https://aqua.sfc.wide.ad.jp/),  
 [SQAI](https://sqai.jp/),  
+[Wada Lab](https://www.instagram.com/wada__lab/),  
 [SAP](http://sap.com/).
 
 My research interest includes [database](https://sites.google.com/view/dpl-sfc), web service architecture, RAG, RAP framework, quantum computing and game engineering.  
