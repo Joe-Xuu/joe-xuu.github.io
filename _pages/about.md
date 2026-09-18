@@ -13,7 +13,7 @@ redirect_from:
 I'm a 4th-year undergraduate at [Keio University](https://www.keio.ac.jp/ja), Faculty of Environment and Information Studies.
 
 ### Affiliations
-
+---
 | Research & Engineering | Arts & Community |
 |---|---|
 | [Data Platform Laboratory](https://sites.google.com/view/dpl-sfc) | [SFC Record Club](https://sfcindiepress.com/sfc-record-club) |
@@ -22,7 +22,7 @@ I'm a 4th-year undergraduate at [Keio University](https://www.keio.ac.jp/ja), Fa
 | [SAP](https://www.sap.com) | |
 
 ### Research Interests
-
+---
 - [Database Systems](https://github.com/Joe-Xuu/havana)
 - Agentic AI
 - [Web Service Architecture](https://github.com/Joe-Xuu/return-system-landscape)
@@ -31,7 +31,7 @@ I'm a 4th-year undergraduate at [Keio University](https://www.keio.ac.jp/ja), Fa
 - Game Engineering
 
 ### What I'm Working On
-
+---
 I am building AI Agents for S/4HANA at [SAP](https://www.sap.com), a German software company known for great ERP software.
 
 I designed and implemented an O2O service platform for [Keio University](https://www.keio.ac.jp/ja) as chief engineer, in collaboration with [Wada
@@ -39,7 +39,7 @@ Lab](https://www.sfc.keio.ac.jp/about_sfc/sustainability/report2024_04.html), [K
 Government](https://www.pref.kanagawa.jp/docs/p3k/sdgs/r8univplazero.html), and [Megloo Inc.](https://megloo.jp) — set to become a permanent campus infrastructure.
 
 ### FYI
-
+---
 There are also web tools and mini-games on this site (e.g. [簿記3級 模擬試験](/boki/)). Feel free to explore in `/portfolios`!
 
 I'm also a film director, writer, composer, and band member — check out [Works](/works/) to see what I've made!
