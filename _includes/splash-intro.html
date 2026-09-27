@@ -23,6 +23,9 @@
   pointer-events: none;
 }
 
+/* hide oneko behind splash until dismissed */
+#oneko { visibility: hidden; }
+
 /* stars canvas sits behind everything */
 #splash-stars {
   position: absolute;
@@ -64,6 +67,11 @@
 (function () {
   if (sessionStorage.getItem('splashShown')) {
     document.getElementById('splash-intro').style.display = 'none';
+    /* oneko visible immediately when splash is skipped */
+    window.addEventListener('DOMContentLoaded', function () {
+      var oneko = document.getElementById('oneko');
+      if (oneko) oneko.style.visibility = '';
+    });
     return;
   }
   sessionStorage.setItem('splashShown', '1');
@@ -124,7 +132,12 @@
     done = true;
     cancelAnimationFrame(rafId);
     splash.classList.add('splash-exit');
-    setTimeout(function () { splash.style.display = 'none'; }, 520);
+    setTimeout(function () {
+      splash.style.display = 'none';
+      /* reveal oneko after splash is gone */
+      var oneko = document.getElementById('oneko');
+      if (oneko) oneko.style.visibility = '';
+    }, 520);
   }
 
   setTimeout(dismiss, 4000);
