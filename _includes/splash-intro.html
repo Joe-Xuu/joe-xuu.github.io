@@ -1,9 +1,7 @@
 <div id="splash-intro" aria-hidden="true">
-  <div class="splash-scan"></div>
-  <div class="splash-content">
-    <h1 class="splash-title"><span id="splash-typed"></span><span class="splash-cursor">█</span></h1>
-    <p class="splash-hint">[ press any key or click to skip ]</p>
-  </div>
+  <canvas id="splash-stars"></canvas>
+  <img id="splash-nyan" src="/assets/images/nyancat.gif" alt="nyan cat" />
+  <p class="splash-hint">[ press any key or click to skip ]</p>
 </div>
 
 <style>
@@ -11,108 +9,51 @@
   position: fixed;
   inset: 0;
   z-index: 99999;
-  background: #0a0a12;
+  background: #000;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  gap: 24px;
   overflow: hidden;
-  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.5s ease;
 }
-
 #splash-intro.splash-exit {
   opacity: 0;
-  transform: translateY(-100%);
   pointer-events: none;
 }
 
-/* scan line sweep */
-.splash-scan {
+/* stars canvas sits behind everything */
+#splash-stars {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(129, 140, 248, 0.06) 48%,
-    rgba(129, 140, 248, 0.15) 50%,
-    rgba(129, 140, 248, 0.06) 52%,
-    transparent 100%
-  );
-  background-size: 100% 200%;
-  animation: scan 2.4s linear infinite;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
 }
 
-@keyframes scan {
-  0%   { background-position: 0 -100%; }
-  100% { background-position: 0 200%; }
-}
-
-/* subtle grid overlay */
-#splash-intro::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(129,140,248,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(129,140,248,0.04) 1px, transparent 1px);
-  background-size: 48px 48px;
-  pointer-events: none;
-}
-
-.splash-content {
+#splash-nyan {
   position: relative;
-  text-align: center;
+  width: min(480px, 75vw);
+  image-rendering: pixelated;
+  animation: nyan-enter 0.4s cubic-bezier(0.34,1.56,0.64,1) both;
   z-index: 1;
 }
-
-.splash-sub {
-  font-family: 'Space Grotesk', 'DM Sans', sans-serif;
-  font-size: clamp(0.7rem, 1.5vw, 0.85rem);
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: rgba(129, 140, 248, 0.7);
-  margin: 0 0 1.2rem;
-  opacity: 0;
-  animation: fadeUp 0.5s ease 0.3s forwards;
-}
-
-.splash-title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
-  font-size: clamp(1.6rem, 4vw, 3rem);
-  color: #f1f5f9;
-  letter-spacing: 0.05em;
-  margin: 0 0 2rem;
-  line-height: 1.2;
-  min-height: 1.3em;
-}
-
-.splash-cursor {
-  display: inline-block;
-  color: #818cf8;
-  animation: blink 0.8s step-end infinite;
-  font-weight: 400;
-  font-size: 0.85em;
-  vertical-align: baseline;
-  margin-left: 2px;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
+@keyframes nyan-enter {
+  from { transform: scale(0.5); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
 }
 
 .splash-hint {
+  position: relative;
+  z-index: 1;
   font-family: 'DM Sans', sans-serif;
   font-size: clamp(0.65rem, 1.2vw, 0.75rem);
   letter-spacing: 0.15em;
-  color: rgba(148, 163, 184, 0.45);
+  color: rgba(255,255,255,0.3);
   margin: 0;
-  opacity: 0;
-  animation: fadeUp 0.5s ease 0.6s forwards;
+  animation: fadeUp 0.5s ease 0.5s both;
 }
-
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(8px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -121,48 +62,73 @@
 
 <script>
 (function () {
-  /* Only show once per browser session (new tab = show, refresh = skip) */
   if (sessionStorage.getItem('splashShown')) {
     document.getElementById('splash-intro').style.display = 'none';
     return;
   }
   sessionStorage.setItem('splashShown', '1');
 
-  const el     = document.getElementById('splash-typed');
-  const cursor = document.querySelector('.splash-cursor');
-  const splash = document.getElementById('splash-intro');
-  const text   = 'Welcome to Kouzen Jo\'s HP';
+  /* ── pixel stars animation ── */
+  var canvas = document.getElementById('splash-stars');
+  var ctx    = canvas.getContext('2d');
+  var W, H, stars = [], rafId;
+  var PIXEL = 4;   /* pixel dot size */
+  var COUNT = 80;  /* number of stars */
 
-  let i = 0;
-  let done = false;
+  function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  /* spawn stars spread across the screen */
+  for (var i = 0; i < COUNT; i++) {
+    stars.push({
+      x:     Math.random() * W,
+      y:     Math.random() * H,
+      speed: 2 + Math.random() * 4,   /* px per frame */
+      alpha: 0.4 + Math.random() * 0.6
+    });
+  }
+
+  function drawFrame() {
+    ctx.clearRect(0, 0, W, H);
+    for (var i = 0; i < stars.length; i++) {
+      var s = stars[i];
+      ctx.globalAlpha = s.alpha;
+      ctx.fillStyle   = '#ffffff';
+      /* pixel-art square dot */
+      ctx.fillRect(Math.round(s.x), Math.round(s.y), PIXEL, PIXEL);
+      /* move right-to-left */
+      s.x -= s.speed;
+      /* wrap around to right edge when off-screen left */
+      if (s.x < -PIXEL) {
+        s.x     = W + PIXEL;
+        s.y     = Math.random() * H;
+        s.speed = 2 + Math.random() * 4;
+        s.alpha = 0.4 + Math.random() * 0.6;
+      }
+    }
+    ctx.globalAlpha = 1;
+    rafId = requestAnimationFrame(drawFrame);
+  }
+  drawFrame();
+
+  /* ── dismiss ── */
+  var splash = document.getElementById('splash-intro');
+  var done   = false;
 
   function dismiss() {
     if (done) return;
     done = true;
-    cursor.style.display = 'none';
+    cancelAnimationFrame(rafId);
     splash.classList.add('splash-exit');
-    setTimeout(function () { splash.style.display = 'none'; }, 650);
+    setTimeout(function () { splash.style.display = 'none'; }, 520);
   }
 
-  /* typing speed: natural variation */
-  function typeNext() {
-    if (done) return;
-    if (i < text.length) {
-      el.textContent += text[i];
-      i++;
-      const delay = 55 + Math.random() * 45;
-      setTimeout(typeNext, delay);
-    } else {
-      /* finished typing — auto-dismiss after a pause */
-      setTimeout(dismiss, 1600);
-    }
-  }
-
-  /* start typing after brief pause */
-  setTimeout(typeNext, 700);
-
-  /* skip on any interaction */
+  setTimeout(dismiss, 4000);
   document.addEventListener('keydown', dismiss, { once: true });
-  splash.addEventListener('click', dismiss, { once: true });
+  splash.addEventListener('click',    dismiss, { once: true });
 })();
 </script>
